@@ -174,10 +174,6 @@ extension Segment {
             return
         }
 
-        if !self.intent.isFinal {
-            throw SegmentParseError.emptyIntent
-        }
-
         for (k, v) in self._indexedTranscripts {
             if !v.isFinal {
                 self._indexedTranscripts.removeValue(forKey: k)
